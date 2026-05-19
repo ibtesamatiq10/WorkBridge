@@ -21,7 +21,7 @@ The app follows **Clean Architecture**:
 2. Add your Gemini API key: `GEMINI_API_KEY=`ADD_GEMNI_API_KEY_HERE`
 3. Add you Map API key: `ADD_MAP_API_KEY_HERE`
 4. Run the app: `flutter run`
-5. Try natural language inputs in English, Urdu, or Roman Urdu (e.g., "Mujhe kal subah G-13 mein AC technician chahiye").
+5. Try natural language inputs in English, Urdu, or Roman Urdu (e.g., "Mujhe kal subah G-13 Islamabad mein AC technician chahiye").
 
 ## Assumptions & Limitations
 - The "Google Antigravity" core platform utilizes the Google Gemini API behind the scenes to perform the AI actions.
