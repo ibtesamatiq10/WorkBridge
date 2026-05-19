@@ -44,7 +44,7 @@ class HomeScreen extends ConsumerWidget {
       children: [
         Scaffold(
           appBar: AppBar(
-            title: const Text('Google Antigravity Orchestrator'),
+            title: const Text('WorkBridge Orchestrator'),
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
             actions: [
               IconButton(
@@ -157,18 +157,25 @@ class HomeScreen extends ConsumerWidget {
 
   Widget _buildResultView(WorkflowState state, WorkflowOrchestrator notifier) {
     if (state.booking != null && state.reasoning != null) {
-      return Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              BookingCard(booking: state.booking!, reasoning: state.reasoning!),
-              TextButton(
-                onPressed: notifier.dismissBooking,
-                child: const Text('Back to provider list'),
-              ),
-            ],
+      return Column(
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              onPressed: notifier.dismissBooking,
+              icon: const Icon(Icons.arrow_back),
+              label: const Text('Back to provider list'),
+            ),
           ),
-        ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: BookingCard(
+                booking: state.booking!,
+                reasoning: state.reasoning!,
+              ),
+            ),
+          ),
+        ],
       );
     }
 

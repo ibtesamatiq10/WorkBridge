@@ -48,7 +48,7 @@ class _ChatInputState extends State<ChatInput> {
                 enabled: !widget.isProcessing,
                 decoration: InputDecoration(
                   hintText:
-                      'E.g., Mujhe kal subah G-13 mein AC technician chahiye',
+                      'E.g., Mujhe kal subah G-13 Islamabad mein AC technician chahiye',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(24),
                     borderSide: BorderSide.none,
