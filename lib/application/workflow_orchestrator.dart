@@ -488,7 +488,7 @@ class WorkflowOrchestrator extends Notifier<WorkflowState> {
 
     triggerNotification(
       NotificationPayload(
-        title: 'WhatsApp • WorkBridge Agent',
+        title: 'WorkBridge',
         body:
             'Hi! Your booking with ${provider.name} for ${request.serviceType} is confirmed for ${request.time}. Ref ID: ${booking.id}. - Google Antigravity',
         type: 'whatsapp',
