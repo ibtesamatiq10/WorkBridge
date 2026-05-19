@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "424386586069",
+    "project_id": "workbridge-ef354",
+    "storage_bucket": "workbridge-ef354.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424386586069:android:b824232fd543ebc3bb095c",
+        "android_client_info": {
+          "package_name": "com.workbridge.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7fJtTwoouLM36pfZ-j5ayfAHbalmqxjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
