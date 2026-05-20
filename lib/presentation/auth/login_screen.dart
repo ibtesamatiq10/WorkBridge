@@ -287,6 +287,20 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                     width: 2,
                                   ),
                                 ),
+                                errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                  borderSide: const BorderSide(
+                                    color: Color(0xFFEF4444),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                  borderSide: const BorderSide(
+                                    color: Color(0xFFEF4444),
+                                    width: 2,
+                                  ),
+                                ),
                                 errorStyle: const TextStyle(
                                   color: Color(0xFFDC2626),
                                   fontWeight: FontWeight.bold,
@@ -298,12 +312,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               ),
                               validator: (value) {
                                 if (value == null || value.trim().isEmpty) {
-                                  return 'Please enter your email';
+                                  return 'Enter your email';
                                 }
                                 if (!RegExp(
                                   r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
                                 ).hasMatch(value.trim())) {
-                                  return 'Please enter a valid email address';
+                                  return 'Enter a valid email address';
                                 }
                                 return null;
                               },
@@ -364,6 +378,20 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                     width: 2,
                                   ),
                                 ),
+                                errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                  borderSide: const BorderSide(
+                                    color: Color(0xFFEF4444),
+                                    width: 1.5,
+                                  ),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                  borderSide: const BorderSide(
+                                    color: Color(0xFFEF4444),
+                                    width: 2,
+                                  ),
+                                ),
                                 errorStyle: const TextStyle(
                                   color: Color(0xFFDC2626),
                                   fontWeight: FontWeight.bold,
@@ -375,7 +403,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                               ),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your password';
+                                  return 'Enter your password';
                                 }
                                 if (value.length < 6) {
                                   return 'Password must be at least 6 characters';
