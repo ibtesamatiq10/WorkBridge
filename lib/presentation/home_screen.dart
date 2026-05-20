@@ -50,17 +50,135 @@ class HomeScreen extends ConsumerWidget {
               IconButton(
                 icon: const Icon(Icons.logout_rounded),
                 tooltip: 'Logout',
-                onPressed: () async {
-                  await ref.read(authControllerProvider.notifier).logout();
-                  if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: const Text('Logged out successfully.'),
-                        backgroundColor: Colors.blue.shade900,
-                        behavior: SnackBarBehavior.floating,
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    backgroundColor: Colors.white,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(28),
                       ),
-                    );
-                  }
+                    ),
+                    builder: (sheetContext) {
+                      return SafeArea(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Center(
+                                child: Container(
+                                  width: 48,
+                                  height: 48,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFEF4444).withValues(
+                                      alpha: 0.1,
+                                    ),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: const Icon(
+                                    Icons.logout_rounded,
+                                    color: Color(0xFFDC2626),
+                                    size: 24,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 16),
+                              const Text(
+                                'Are you sure you want to logout?',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF1E1B4B),
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              const Text(
+                                'You will need to enter your email and password again to sign back in.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Color(0xFF4B5563),
+                                ),
+                              ),
+                              const SizedBox(height: 24),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: OutlinedButton(
+                                      onPressed: () => Navigator.pop(sheetContext),
+                                      style: OutlinedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(12),
+                                        ),
+                                        side: BorderSide(
+                                          color: Colors.grey.shade300,
+                                        ),
+                                        padding: const EdgeInsets.symmetric(
+                                          vertical: 14,
+                                        ),
+                                      ),
+                                      child: const Text(
+                                        'Cancel',
+                                        style: TextStyle(
+                                          color: Color(0xFF4B5563),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: ElevatedButton(
+                                      onPressed: () async {
+                                        Navigator.pop(sheetContext);
+                                        await ref
+                                            .read(authControllerProvider.notifier)
+                                            .logout();
+                                        if (context.mounted) {
+                                          ScaffoldMessenger.of(context).showSnackBar(
+                                            SnackBar(
+                                              content: const Text(
+                                                'Logged out successfully.',
+                                              ),
+                                              backgroundColor: Colors.blue.shade900,
+                                              behavior: SnackBarBehavior.floating,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.circular(12),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: const Color(0xFFEF4444),
+                                        foregroundColor: Colors.white,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(12),
+                                        ),
+                                        padding: const EdgeInsets.symmetric(
+                                          vertical: 14,
+                                        ),
+                                        elevation: 0,
+                                      ),
+                                      child: const Text(
+                                        'Logout',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
                 },
               ),
             ],

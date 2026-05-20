@@ -284,7 +284,7 @@ class _EmailVerificationScreenState
                                 ),
                                 const TextSpan(
                                   text:
-                                      '.\n\nPlease click the link in your email app to verify your account.',
+                                      '.\n\nCheck your inbox or spam folder and click the verification link sent to your email to verify your account.',
                                 ),
                               ],
                             ),
