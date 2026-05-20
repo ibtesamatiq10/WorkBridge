@@ -7,7 +7,7 @@ This application strictly uses the **Google Antigravity** platform to orchestrat
 - **Orchestrate agent workflows**: The `AntigravityPlatformService` serves as the central brain orchestrating the lifecycle (Intent -> Discovery -> Reasoning -> Booking -> Notification).
 - **Manage multi-step reasoning**: The agent evaluates multiple variables (provider proximity, ratings, and schedule) to deduce the best match. This is explicitly demonstrated in the "Agent Reasoning Logs" panel in the UI.
 - **Integrate tools (Maps, Search, APIs)**: The workflow simulates integration with external tools (Google Maps for coordinate resolution, Search APIs for local discovery). 
-- **Execute actions (booking, notifications, etc.)**: The platform simulates transactions against a Booking API to generate confirmation IDs and triggers automated WhatsApp/SMS notifications as follow-ups.
+- **Execute actions (booking, notifications, etc.)**: The platform simulates transactions against a Booking API to generate confirmation IDs and triggers automated notifications as follow-ups.
 
 ## Architecture
 The app follows **Clean Architecture**:

@@ -39,7 +39,7 @@ class NotificationsList extends ConsumerWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                'Book a provider to simulate WhatsApp and SMS alerts during the session.',
+                'Book a provider to simulate notification during the session.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 13,
