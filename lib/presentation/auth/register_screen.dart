@@ -569,7 +569,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                               ),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Confirm your password';
+                                  return 'Enter your confirm password';
                                 }
                                 if (value != _passwordController.text) {
                                   return 'Passwords do not match';
